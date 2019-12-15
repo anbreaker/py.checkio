@@ -20,10 +20,13 @@ def checkio(array):
         sums even-indexes elements and multiply at the last
     """
     suma = 0
-    for n in array:
+    for n in range(len(array)):
         if n % 2 == 0:
-            suma += n
-    suma *= array[-1]
+            suma += array[n]
+    if len(array) == 0:
+        return 0
+    else:
+        suma *= array[-1]
     return suma
 
 
