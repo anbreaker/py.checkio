@@ -26,18 +26,15 @@ def second_index(text: str, symbol: str) -> [int, None]:
         returns the second index of a symbol in a given text
     """
     # your code here
-    primeraPos = 0
-    segundaPos = 0
-    second_index = 0
-    if symbol in text and text.count(symbol) == 2:
-        primeraPos = text.find(symbol)
-        pass
 
-    return primeraPos
+    if text.count(symbol) < 2:
+        return None
+    first = text.find(symbol)
+    second_index = text.find(symbol, first + 1)
+
+    return second_index
 
 
-print(second_index("simson", "s"))
-'''
 if __name__ == '__main__':
     print('Example:')
     print(second_index("sims", "s"))
@@ -49,4 +46,3 @@ if __name__ == '__main__':
     assert second_index("hi mayor", " ") is None, "Fourth"
     assert second_index("hi mr Mayor", " ") == 5, "Fifth"
     print('You are awesome! All tests are done!')
-'''
